@@ -1,16 +1,16 @@
 # LEARN ABOUT LARAVEL
 ___
 ### Getting Started On Windows
-1. Create project "Learn-About-Laravel" with composer:
+- Create project "Learn-About-Laravel" with composer:
 ```
     composer create-project laravel/laravel Learn-About-Laravel
 ```
-1. Run local server
+- Run local server
 ```
     php artisan serve
 ```
 
-1. Database Configuration
+- Database Configuration
 ```
     DB_CONNECTION=mysql // Quản lý CSDL bằng MySQl
     DB_HOST=127.0.0.1
