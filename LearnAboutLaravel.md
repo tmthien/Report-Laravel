@@ -56,15 +56,15 @@
 ### Frontend
 - Blade view có đuôi **.blade.php** - giúp ta viết cú pháp PHP trong view 1 cách ngắn gọn, logic. Trong blade thì ta có thể viết cả PHP thuần 
 - Hiển thị dữ liệu trong Blade template
-  ```laravel
-    {{-- routes/web.php --}}
-    Route::get('/', function () {
-        return view('welcome', ['name' => "Trần Minh Thiện"]);
-    })->name('home');
+    ```laravel
+        {{-- routes/web.php --}}
+        Route::get('/', function () {
+            return view('welcome', ['name' => "Trần Minh Thiện"]);
+        })->name('home');
 
-    {{-- resources/views/welcom.blade.php --}}
-    <h1>Hello {{$name}} </h1>
-  ```
+        {{-- resources/views/welcom.blade.php --}}
+        <h1>Hello {{$name}} </h1>
+    ```
 - Hiển thị dữ liệu dạng json endcode trong Blade
   ```laravel
     @json($array, $flag)
