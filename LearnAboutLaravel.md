@@ -78,7 +78,7 @@ ___
         var app = <?php echo json_encode($array); ?>;
     </script>
   ```
-- [Laravel Breeze]: https://laravel.com/docs/10.x/starter-kits 
+- [Laravel Breeze](https://laravel.com/docs/10.x/starter-kits) 
   - Installation
     ```
         composer require laravel/breeze:1.9.2
