@@ -25,32 +25,32 @@
   - Đăng ký cơ chế autoload (Register The Auto Loader)
   - Chạy ứng dụng (Run the application)
 - Tiếp theo, request sẽ được gửi đến HTTP Kernel hoặc Console Kernel,tùy thuộc vào loại yêu cầu. (`app/Http/Kernel.php`)
-  - HTTP Kernel kế thừa class **Illuminate\Foundation\Http\Kernel**, class này sẽ thực việc các công việc trước khi request được thực thi như cấu hình xử lý lỗi, cấu hình logger, xác định môi trường ứng dụng.
+  - HTTP Kernel kế thừa class `Illuminate\Foundation\Http\Kernel`, class này sẽ thực việc các công việc trước khi request được thực thi như cấu hình xử lý lỗi, cấu hình logger, xác định môi trường ứng dụng.
   - HTTP Kernel cũng thực hiện một số middleware mặc định của Laravel
 - Tiếp theo, nhiệm vụ của HTTP Kernel đó chính là load các service provider trong file `config/app.php`.
   - Đăng ký service provider (Register service provider)
   - Khởi động service provider (Bootstrap service provider)
-- Sau khi hoàn tất load service provider, các request sẽ được gửi đến **routes**
-  - Nhiệm vụ chính của **route** chính là điều hướng request tới các **Controller/Action** tương ứng
-    Route -> Middleware -> Controller/Action 
-    Route -> Controller/Action
+- Sau khi hoàn tất load service provider, các request sẽ được gửi đến `routes`
+  - Nhiệm vụ chính của **route** chính là điều hướng request tới các `Controller/Action` tương ứng
+    `Route -> Middleware -> Controller/Action` 
+    `Route -> Controller/Action`
 - Sau khi xử lý xong request thì sẽ trả về response qua *view* hoặc trả về trực tiếp phía client
 ### Dicrectory Structure
 ###### Ta sẽ làm việc chính với những thư mục sau:
-- **app** 
-  - *_app/Http/Controllers_* - thư mục này chứa các file xử lý request
-  - *_app/Http/Middleware_* - thư mục này chứa các file Middleware do lập trình viên tạo ra cho hệ thống
-  - *_app/Http/Models_* - chứa các file thao tác với DB
-- **database**
-  - *_database/factories_* - chứa các file có chức năng tạo dữ liệu ảo, thuận lợi cho việc phát triển và testing
-  - *_database/migrations_* - chứa các file dùng để khởi tạo bảng trong DB
-  - *_database/seeders_* - seeder sẽ hỗ trợ tạo dữ liệu 1 cách nhanh chóng 
-- **resource**
+- **`app`** 
+  - *`_app/Http/Controllers_`* - thư mục này chứa các file xử lý request
+  - *`_app/Http/Middleware_`* - thư mục này chứa các file Middleware do lập trình viên tạo ra cho hệ thống
+  - *`_app/Http/Models_`* - chứa các file thao tác với DB
+- **`database`**
+  - *`_database/factories_`* - chứa các file có chức năng tạo dữ liệu ảo, thuận lợi cho việc phát triển và testing
+  - *`_database/migrations_`* - chứa các file dùng để khởi tạo bảng trong DB
+  - *`_database/seeders_`* - seeder sẽ hỗ trợ tạo dữ liệu 1 cách nhanh chóng 
+- **`resource`**
   - Chứa các folder như CSS, JS, views,...
-- **routes**
-  - *_routes/api.php_* - định nghĩa router api
-  - *_routes/web.php_* - định nghĩa các router cho project
-- **storage**
+- **`routes`**
+  - *`_routes/api.php_`* - định nghĩa router api
+  - *`_routes/web.php_`* - định nghĩa các router cho project
+- **`storage`**
   - đây là nơi chứa các file blade template
   - *_storages/app/public_* có thể dùng để lưu trữ các file do người dùng (user) đăng tải, chẳng hạn như ảnh
 ### Frontend
