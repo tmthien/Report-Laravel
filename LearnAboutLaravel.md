@@ -89,3 +89,8 @@ ___
         npm run dev
         php artisan migrate
     ```
+***
+### Basic Laravel
+- Route
+  - Chức năng: điều hướng các request đến với URL path tương ứng với các Controller, Action, View, Command Line.
+  - `Route::get($path, $callback)`: nhận request với phương thức GET
