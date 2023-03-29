@@ -75,4 +75,14 @@
         var app = <?php echo json_encode($array); ?>;
     </script>
   ```
-- 
+- Laravel Breeze (Authentication Features)
+  - Installation
+    ```
+        composer require laravel/breeze:1.9.2
+        
+        php artisan breeze:install
+ 
+        npm install
+        npm run dev
+        php artisan migrate
+    ```
