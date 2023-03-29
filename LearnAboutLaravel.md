@@ -1,5 +1,5 @@
 # LEARN ABOUT LARAVEL
----
+___
 ### Getting Started On Windows
 1. Create project "Learn-About-Laravel" with composer:
 ```
@@ -19,6 +19,7 @@
     DB_USERNAME=root    // Username CSDL
     DB_PASSWORD=        // Password
 ```
+***
 ### Request Lifecycle
 - Tất cả yêu cầu sẽ được gửi đến public/index.php (Trong file này sẽ thực hiện 3 nhiệm vụ chính)
   - Kiểm tra xem ứng dụng có đang được bảo trì hay không (Check If The Application Is Under Maintenance)
@@ -35,6 +36,7 @@
     `Route -> Middleware -> Controller/Action` 
     `Route -> Controller/Action`
 - Sau khi xử lý xong request thì sẽ trả về response qua *view* hoặc trả về trực tiếp phía client
+***
 ### Dicrectory Structure
 ###### Ta sẽ làm việc chính với những thư mục sau:
 - **`app`** 
@@ -53,6 +55,7 @@
 - **`storage`**
   - đây là nơi chứa các file blade template
   - *`storages/app/public`* có thể dùng để lưu trữ các file do người dùng (user) đăng tải, chẳng hạn như ảnh
+***
 ### Frontend
 - Blade view có đuôi **`.blade.php`** - giúp ta viết cú pháp PHP trong view 1 cách ngắn gọn, logic. Trong blade thì ta có thể viết cả PHP thuần 
 - Hiển thị dữ liệu trong Blade template
