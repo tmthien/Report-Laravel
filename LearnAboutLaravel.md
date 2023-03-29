@@ -24,7 +24,7 @@
   - Kiểm tra xem ứng dụng có đang được bảo trì hay không (Check If The Application Is Under Maintenance)
   - Đăng ký cơ chế autoload (Register The Auto Loader)
   - Chạy ứng dụng (Run the application)
-- Tiếp theo, request sẽ được gửi đến HTTP Kernel hoặc Console Kernel,tùy thuộc vào loại yêu cầu. (**app/Http/Kernel.php**)
+- Tiếp theo, request sẽ được gửi đến HTTP Kernel hoặc Console Kernel,tùy thuộc vào loại yêu cầu. (*app/Http/Kernel.php*)
   - HTTP Kernel kế thừa class **Illuminate\Foundation\Http\Kernel**, class này sẽ thực việc các công việc trước khi request được thực thi như cấu hình xử lý lỗi, cấu hình logger, xác định môi trường ứng dụng.
   - HTTP Kernel cũng thực hiện một số middleware mặc định của Laravel
 - Tiếp theo, nhiệm vụ của HTTP Kernel đó chính là load các service provider trong file **config/app.php**.
