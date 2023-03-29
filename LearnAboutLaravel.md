@@ -38,21 +38,21 @@
 ### Dicrectory Structure
 ###### Ta sẽ làm việc chính với những thư mục sau:
 - **`app`** 
-  - *_`app/Http/Controllers`_* - thư mục này chứa các file xử lý request
-  - *_`app/Http/Middleware`_* - thư mục này chứa các file Middleware do lập trình viên tạo ra cho hệ thống
-  - *_`app/Http/Models`_* - chứa các file thao tác với DB
+  - *`app/Http/Controllers`* - thư mục này chứa các file xử lý request
+  - *`app/Http/Middleware`* - thư mục này chứa các file Middleware do lập trình viên tạo ra cho hệ thống
+  - *`app/Http/Models`* - chứa các file thao tác với DB
 - **`database`**
-  - *_`database/factories`_* - chứa các file có chức năng tạo dữ liệu ảo, thuận lợi cho việc phát triển và testing
+  - *`database/factories`* - chứa các file có chức năng tạo dữ liệu ảo, thuận lợi cho việc phát triển và testing
   - *_`database/migrations`_* - chứa các file dùng để khởi tạo bảng trong DB
   - *_`database/seeders`_* - seeder sẽ hỗ trợ tạo dữ liệu 1 cách nhanh chóng 
 - **`resource`**
   - Chứa các folder như CSS, JS, views,...
 - **`routes`**
-  - *_`routes/api.php`_* - định nghĩa router api
-  - *`_routes/web.php`_* - định nghĩa các router cho project
+  - *`routes/api.php`* - định nghĩa router api
+  - *`routes/web.php`* - định nghĩa các router cho project
 - **`storage`**
   - đây là nơi chứa các file blade template
-  - *_`storages/app/public`_* có thể dùng để lưu trữ các file do người dùng (user) đăng tải, chẳng hạn như ảnh
+  - *`storages/app/public`* có thể dùng để lưu trữ các file do người dùng (user) đăng tải, chẳng hạn như ảnh
 ### Frontend
 - Blade view có đuôi **`.blade.php`** - giúp ta viết cú pháp PHP trong view 1 cách ngắn gọn, logic. Trong blade thì ta có thể viết cả PHP thuần 
 - Hiển thị dữ liệu trong Blade template
