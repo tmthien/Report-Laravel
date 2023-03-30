@@ -126,4 +126,11 @@ ___
         ]);
         
      ```
+   - `Route::redirect($path, $redirectTo, $status)`: Nhận request sau đó sẽ chuyển hướng tới $redirectTo.
+     - $status: ở đây sẽ là *Mã trạng thái HTTP* mặc định sẽ là 302, với *redirect* thì nó sẽ nằm trong khoảng 300-308 [Redirection messages](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#redirection_messages)
+     - Example:
+     ```
+        Route::redirect('google', 'https://www.google.com/');
+     ```
    - Để kiểm tra các route đã được khai báo ta dùng `php artisan route:list`.
+   
