@@ -309,7 +309,7 @@ ___
              */
             public function run()
             {
-                Product::factory()->count(1000)->create();
+                Product::factory()->count(1000)->create();// Tạo dữ liệu ảo với 1000 record
             }
         }
      ```
