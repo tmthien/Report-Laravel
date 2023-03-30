@@ -381,6 +381,7 @@ ___
     ```
   - Loop
     - Trong Laravel sẽ không hỗ trợ vòng lặp do-while
+    - @continue, @break tương ứng với continue, break trong PHP
     ```
         @for ($i = 0; $i < 10; $i++)
             The current value is {{ $i }}
@@ -390,6 +391,7 @@ ___
             <p>This is user {{ $user->id }}</p>
         @endforeach
         ---
+        //Trong vòng lặp này thì sẽ kiểm tra array, nếu array là 1 mảng rỗng thì sẽ thực hiện code trong @empty... @endforelse
         @forelse ($users as $user)
             <li>{{ $user->name }}</li>
         @empty
