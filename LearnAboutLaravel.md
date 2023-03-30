@@ -93,16 +93,17 @@ ___
 ### Basic Laravel
 - Route
   - Chức năng: điều hướng các request đến với URL path tương ứng với các Controller, Action, View, Command Line.
-  - `Route::get($path, $callback)`: nhận request với phương thức GET
+  - `Route::get($path, $callback)`: nhận request với phương thức GET - với $path là đường dẫn route, $callback là 1 hành động nào đó sẽ được trả về
     - Example: 
     ```
     use App\Http\Controllers\UserController;
  
     Route::get('/user', [UserController::class, 'index']);
     ```
-  - `Route::post($path, $callback)`: nhận request với phương thức post
+  - `Route::post($path, $callback)`: nhận request với phương thức POST
     ```
     use App\Http\Controllers\UserController;
  
-    Route::post('/edit-info', [UserController::class, 'edit']);
+    Route::post('/edit-info/{id}', [UserController::class, 'edit']);
     ```
+    
