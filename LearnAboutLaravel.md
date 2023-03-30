@@ -315,4 +315,18 @@ ___
      ```
      - Sau đó chạy lệnh
      `php artisan db:seed --class=ProductTableSeeder`
+    <br>
+- Blade Templates
+  - Code login với Blade Templates
+    - `@if, @else, @elseif, @endif` tương tự với trong PHP thuần `if, else, elseif, endif`
+      - Example:
+    ```
+        @if (count($records) === 1)
+            I have one record!
+        @elseif (count($records) > 1)
+            I have multiple records!
+        @else
+            I don't have any records!
+        @endif
+    ```
     
