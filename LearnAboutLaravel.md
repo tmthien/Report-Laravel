@@ -252,12 +252,14 @@ ___
         }
     ```
   - Fake DB
+        
+    - Step 1:
     ```
-        step1:
         php artisan make:factory ProductFactory --model=Product
         // file ProductFactory sẽ được tạo trong thư mục *database/factory/UserFactory.php*
-        
-        step2:
+    ```    
+    - Step 2:
+    ```
         <?php
         namespace Database\Factories;
 
@@ -278,14 +280,19 @@ ___
                 ];
             }
         }
-        step3:
+     ```   
+     - Step 3:
+     ``` 
         php artisan tinker
-        
-        step4: 
+     ```   
+     - Step 4:
+     ``` 
         App\Models\Product::factory()->count(10)->create(); //tạo dữ liệu ảo với 10 record
-        hoặc có thể sử dụng Seeder
-        php artisan make:seed ProductTableSeeder
+     ```   
+     - Hoặc có thể sử dụng Seeder
+        `php artisan make:seed ProductTableSeeder`
         -------------------------------------------------
+     ```
         <?php
 
         namespace Database\Seeders;
