@@ -115,3 +115,4 @@ ___
         Route::resource('products', ProductController::class);
         //đường dẫn của các action cũng sẽ được tạo tự động
      ```
+   - Để kiểm tra các route đã được khai báo ta dùng `php artisan route:list`.
