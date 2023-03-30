@@ -115,4 +115,15 @@ ___
         Route::resource('products', ProductController::class);
         //đường dẫn của các action cũng sẽ được tạo tự động
      ```
+     - Khi khai báo resource route hệ thống sẽ mặc định sẽ xử lý toàn bộ các action trong đó. Để chỉ dùng 1 vài action trong đó thì ta có thể sử dụng `->only([]);`
+     ```
+        Route::resource('photos', 'PhotoController')->only([
+            'index', 'show'
+        ]);
+        //
+        Route::resource('photos', 'PhotoController')->only([
+            'index', 'create', 'delete'
+        ]);
+        
+     ```
    - Để kiểm tra các route đã được khai báo ta dùng `php artisan route:list`.
