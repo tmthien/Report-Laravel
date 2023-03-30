@@ -185,3 +185,70 @@ ___
         ...
     </form>
     ```
+    <br>
+- Models
+  - Xử lý các thao tác với DB
+  - Định nghĩa model
+    ```
+        php artisan make:model *NameModel*
+    ```
+    - Example:
+    ```
+        <?php
+
+        namespace App\Models;
+
+        use Illuminate\Database\Eloquent\Factories\HasFactory;
+        use Illuminate\Database\Eloquent\Model;
+
+        class Product extends Model
+        {
+            use HasFactory;
+            protected $fillable = [
+                'title', 'detail'
+            ];
+        }
+        
+        //Model Product 
+    ```
+    <br>
+- Migration
+    ```
+        php artisan make:migration create_*NameTable*_table
+    ```
+  - Sau khi tạo xong 
+    ```
+        <?php
+
+        use Illuminate\Database\Migrations\Migration;
+        use Illuminate\Database\Schema\Blueprint;
+        use Illuminate\Support\Facades\Schema;
+
+        class CreateProductsTable extends Migration
+        {
+            /**
+             * Run the migrations.
+             *
+             * @return void
+             */
+            public function up()
+            {
+                Schema::create('products', function (Blueprint $table) {
+                    $table->id();
+                    //ở đây sẽ thêm những trường và kiểu dữ liệu có trong table
+                    $table->timestamps();
+                });
+            }
+
+            /**
+             * Reverse the migrations.
+             *
+             * @return void
+             */
+            public function down()
+            {
+                Schema::dropIfExists('products');
+            }
+        }
+    ```
+      
