@@ -106,4 +106,11 @@ ___
  
     Route::post('/edit-info/{id}', [UserController::class, 'edit']);
     ```
-    
+  - `Route::resource($path, $callback)`: Khi tạo Controller với lệnh `php artisan make:controller *NameController* --resource` thì trong Controller tạo ra 7 action mặc định: index(), create(), store(), show(), update(), edit(), delete(). Khi sử dụng `Route::resoure` thì tất cả các action sẽ được khai báo.
+    - Example:
+     ```
+        php artisan make:controller ProductController --resource
+        
+        //Khai báo 
+        Route::resource('products', ProductController::class);
+     ```
