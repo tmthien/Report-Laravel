@@ -100,3 +100,9 @@ ___
  
     Route::get('/user', [UserController::class, 'index']);
     ```
+  - `Route::post($path, $callback)`: nhận request với phương thức post
+    ```
+    use App\Http\Controllers\UserController;
+ 
+    Route::get('/edit-info', [UserController::class, 'edit']);
+    ```
