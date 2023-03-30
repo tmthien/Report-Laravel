@@ -251,7 +251,7 @@ ___
             }
         }
     ```
-  - Fake DB
+  - Factory, Seeder
         
     - Step 1:
     ```
@@ -287,7 +287,7 @@ ___
      ```   
      - Step 4:
      ``` 
-        App\Models\Product::factory()->count(10)->create(); //tạo dữ liệu ảo với 10 record
+        App\Models\Product::factory()->count(10)->create(); //tạo dữ liệu với 10 record
      ```   
      - Hoặc có thể sử dụng Seeder
      `php artisan make:seed ProductTableSeeder`
@@ -309,7 +309,7 @@ ___
              */
             public function run()
             {
-                Product::factory()->count(1000)->create();// Tạo dữ liệu ảo với 1000 record
+                Product::factory()->count(1000)->create();// Tạo dữ liệu với 1000 record
             }
         }
      ```
