@@ -113,4 +113,5 @@ ___
         
         //Khai báo 
         Route::resource('products', ProductController::class);
+        //đường dẫn của các action cũng sẽ được tạo tự động
      ```
