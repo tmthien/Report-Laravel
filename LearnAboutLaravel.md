@@ -251,4 +251,63 @@ ___
             }
         }
     ```
-      
+  - Fake DB
+    ```
+        step1:
+        php artisan make:factory ProductFactory --model=Product
+        // file ProductFactory sẽ được tạo trong thư mục *database/factory/UserFactory.php*
+        
+        step2:
+        <?php
+        namespace Database\Factories;
+
+        use Illuminate\Database\Eloquent\Factories\Factory;
+
+        class ProductFactory extends Factory
+        {
+            /**
+             * Define the model's default state.
+             *
+             * @return array
+             */
+            public function definition()
+            {
+                return [
+                    "name" => $this->faker->name(),
+                    "detail" => $this->faker->sentence(),
+                ];
+            }
+        }
+        step3:
+        php artisan tinker
+        
+        step4: 
+        App\Models\Product::factory()->count(10)->create(); //tạo dữ liệu ảo với 10 record
+        hoặc có thể sử dụng Seeder
+        php artisan make:seed ProductTableSeeder
+        -------------------------------------------------
+        <?php
+
+        namespace Database\Seeders;
+
+        use App\Models\Product;
+        use Illuminate\Database\Seeder;
+        use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+        class ProductTableSeeder extends Seeder
+        {
+            /**
+             * Run the database seeds.
+             *
+             * @return void
+             */
+            public function run()
+            {
+                Product::factory()->count(1000)->create();
+            }
+        }
+        -------------------------------------------------
+        sau đó chạy lệnh
+        php artisan db:seed --class=ProductTableSeeder
+    
+    ```  
