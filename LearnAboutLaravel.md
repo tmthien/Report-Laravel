@@ -146,6 +146,5 @@ ___
         });
      ```    
    - Để kiểm tra các route đã được khai báo ta dùng `php artisan route:list`.
-
-
+   <br>
 - Middleware 
