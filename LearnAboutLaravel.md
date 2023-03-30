@@ -290,8 +290,7 @@ ___
         App\Models\Product::factory()->count(10)->create(); //tạo dữ liệu ảo với 10 record
      ```   
      - Hoặc có thể sử dụng Seeder
-        `php artisan make:seed ProductTableSeeder`
-        -------------------------------------------------
+     `php artisan make:seed ProductTableSeeder`
      ```
         <?php
 
@@ -313,8 +312,7 @@ ___
                 Product::factory()->count(1000)->create();
             }
         }
-        -------------------------------------------------
-        sau đó chạy lệnh
-        php artisan db:seed --class=ProductTableSeeder
+     ```
+     - Sau đó chạy lệnh
+     `php artisan db:seed --class=ProductTableSeeder`
     
-    ```  
