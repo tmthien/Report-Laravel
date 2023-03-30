@@ -319,7 +319,6 @@ ___
 - Blade Templates
   - Code login với Blade Templates
     - `@if, @else, @elseif, @endif` tương tự với trong PHP thuần `if, else, elseif, endif`
-      - Example:
     ```
         @if (count($records) === 1)
             I have one record!
@@ -329,4 +328,28 @@ ___
             I don't have any records!
         @endif
     ```
+    - `@unless` - Nếu logic trong `@unless` false thì code bên trong sẽ được thực hiện
+    ```
+        @unless (Auth::check())
+            You are not signed in.
+        @endunless
+    ```
+    - `@isset` - để kiểm tra 1 biến có tồn tại hay không.
+    ```
+        @isset($message)
+            {{ $message }}
+        @endisset
+        ---
+        @if(isset($massage))
+            {{ $message }}
+        @endif
+    ```
+    - `@empty` - để kiểm tra 1 biến có giá trị hay không.
+    ```
+        @empty($message)
+            {{ $message }}
+        @endempty
+    ```
+    
+    - `@empty` 
     
