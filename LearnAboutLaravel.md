@@ -363,4 +363,40 @@ ___
         @endauth
     ```
     - `@guest` - chức năng giống với `@auth`
-    - 
+  - Switch - Case
+    - Tương tự với Switch-Case trong PHP thuần
+    ```
+        @switch($i)
+            @case(1)
+                First case...
+                @break
+
+            @case(2)
+                Second case...
+                @break
+
+            @default
+                Default case...
+        @endswitch
+    ```
+  - Loop
+    - Trong Laravel sẽ không hỗ trợ vòng lặp do-while
+    ```
+        @for ($i = 0; $i < 10; $i++)
+            The current value is {{ $i }}
+        @endfor
+        ---
+        @foreach ($users as $user)
+            <p>This is user {{ $user->id }}</p>
+        @endforeach
+        ---
+        @forelse ($users as $user)
+            <li>{{ $user->name }}</li>
+        @empty
+            <p>No users</p>
+        @endforelse
+        ---
+        @while (true)
+            <p>I'm looping forever.</p>
+        @endwhile
+    ```
