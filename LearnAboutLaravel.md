@@ -402,3 +402,5 @@ ___
             <p>I'm looping forever.</p>
         @endwhile
     ```
+  - Nhúng view vào Blade
+    - @inlcude
