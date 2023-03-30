@@ -166,9 +166,9 @@ ___
         {
             public function index()
             {
-                $products = Product::latest()->paginate(5);
+                $products = Product::latest()->paginate(5);// lấy bảng ghi mới nhất và phân trang
 
-                return view('products.index',compact('products'))
+                return view('products.index',compact('products')) // trả về view
                     ->with('i', (request()->input('page', 1) - 1) * 5);
             }
         }
