@@ -153,6 +153,26 @@ ___
     ```
         php artisan make:controller *NameController*
     ```
+    - Ex:
+    ```
+        <?php
+
+        namespace App\Http\Controllers;
+
+        use App\Models\Product;
+        use Illuminate\Http\Request;
+
+        class ProductController extends Controller
+        {
+            public function index()
+            {
+                $products = Product::latest()->paginate(5);
+
+                return view('products.index',compact('products'))
+                    ->with('i', (request()->input('page', 1) - 1) * 5);
+            }
+        }
+    ```
   <br>
 - CSRF 
   - Cross-Site Request Forgery (CSRF) đại khái nghĩa là "giả mạo yêu cầu trên trang web". Đây là một loại tấn công sẽ thực hiện các request trái phép thông qua user đã được xác thực (tức là đã đăng nhập trên hệ thống).
