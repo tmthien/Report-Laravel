@@ -104,5 +104,5 @@ ___
     ```
     use App\Http\Controllers\UserController;
  
-    Route::get('/edit-info', [UserController::class, 'edit']);
+    Route::post('/edit-info', [UserController::class, 'edit']);
     ```
