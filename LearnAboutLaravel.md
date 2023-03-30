@@ -351,5 +351,15 @@ ___
         @endempty
     ```
     
-    - `@empty` 
-    
+    - `@auth` - Kiểm tra xác thực. Nếu user đã login thì code bên trong sẽ đc thực thi
+    ```
+        @auth
+            // The user is authenticated...
+        @endauth
+        ---
+        Check guard admin
+        @auth('admin')
+            // The user is authenticated...
+        @endauth
+    ```
+    - `@guest` - chức năng giống với `@auth`
