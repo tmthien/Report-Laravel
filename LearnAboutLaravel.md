@@ -132,5 +132,18 @@ ___
      ```
         Route::redirect('google', 'https://www.google.com/');
      ```
+   - `Route::view($path, $viewName, $data)`: Nhận request sau đó render ra view.
+     - Example:
+     ```
+        Route::view('view', 'welcome');
+     ```
+   - `Route::group(['prefix' => '$path', 'middleware'=> '$middleware'], $callback)`: Nhóm các route với các prefix, middleware xác định
+     - Example:
+     ```
+        Route::group(['prefix'=> 'admin','middleware' => 'auth'], function () {
+            Route::resource('categories', CategoryController::class);
+            Route::resource('products', ProductController::class);
+        });
+     ```    
    - Để kiểm tra các route đã được khai báo ta dùng `php artisan route:list`.
    
