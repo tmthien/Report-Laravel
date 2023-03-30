@@ -154,7 +154,7 @@ ___
         php artisan make:controller *NameController*
     ```
 <br>
-- CSRF
+- CSRF 
   - Cross-Site Request Forgery (CSRF) đại khái nghĩa là "giả mạo yêu cầu trên trang web". Đây là một loại tấn công sẽ thực hiện các request trái phép thông qua user đã được xác thực (tức là đã đăng nhập trên hệ thống).
   - CSRF Laravel: Laravel sẽ tự động tạo một "token" cho mỗi phiên hoạt động của người dùng, được quản lý bởi framework. Token dùng để xác minh rằng user đã đăng nhập là user thực sự thực hiện các request tới ứng dụng.
   - Để sử sử dụng chức năng này thì ta cần khai báo `@csrf` vào form để tạo `token`
