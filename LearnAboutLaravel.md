@@ -95,3 +95,8 @@ ___
   - Chức năng: điều hướng các request đến với URL path tương ứng với các Controller, Action, View, Command Line.
   - `Route::get($path, $callback)`: nhận request với phương thức GET
     - Example: 
+    ```
+    use App\Http\Controllers\UserController;
+ 
+    Route::get('/user', [UserController::class, 'index']);
+    ```
