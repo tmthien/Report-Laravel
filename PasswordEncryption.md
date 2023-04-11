@@ -24,7 +24,10 @@
       ```
       $2y$10$RT2Pnlx7aaG2EDHy8SgdIunndkeiLB.kUTzSdVoKgL2x/TEr1tkZG
       ```
-      - Trong đó `[algorithm]` sẽ là thuật toán băm
-      - `[cost]` sẽ là số lần lặp, ví dụ (2^10)
+      - Trong đó `[algorithm]`, `$2y$` thuật toán mã hóa blowfish
+      - `[cost]` sẽ là số lần lặp, `$2y$10` sẽ là 2^10 lần lặp
+      - `[22 characters salt]` sẽ là kí tự đc thêm vào từ quá trình *salting* đã được mã hoá base64 về 22 kí tự
+      - `[31 characters hash]` sẽ là mã băm được encode base64 về 31 kí tự.
+      - `base64` là phương thức convert dạng mã hóa 2 chiều từ `binary` sang `string` để có thể gửi đi được trong network một cách dễ dàng. Các `binary` lúc này sẽ được thể hiện bằng các ký tự mã ASCII .
   - Trong Laravel sẽ sử dụng dạng mã hoá **Bcrypt**
   
