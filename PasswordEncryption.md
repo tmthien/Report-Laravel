@@ -20,6 +20,11 @@
       - Khi có người tìm cách giải mã MD5 của chuỗi mã hoá, nó sẽ tra trong CSDL và trả về kết quả
   - **Bcrypt**: là một hàm mã hóa mật khẩu được thiết kế bởi Niels Provos và David Mazières dựa trên các thuật toán mã hóa Blowfish. Nó là sự kết hợp giữa *hashing*, *streching* và *salting*. 
       - Dãy hashing của **Bcrypt** sẽ có dạng: 
-      ``` $[algorithm]$[cost]$[22 characters salt][31 characters hash] ```
+      ` $[algorithm]$[cost]$[22 characters salt][31 characters hash] `
+      ```
+      $2y$10$RT2Pnlx7aaG2EDHy8SgdIunndkeiLB.kUTzSdVoKgL2x/TEr1tkZG
+      ```
+      - Trong đó `[algorithm]` sẽ là thuật toán băm
+      - `[cost]` sẽ là số lần lặp, ví dụ (2^10)
   - Trong Laravel sẽ sử dụng dạng mã hoá **Bcrypt**
   
