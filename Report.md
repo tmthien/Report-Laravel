@@ -12,4 +12,4 @@ Vì phía BE sẽ build phần `Admin Pannel` và phần `FAQ & Community Guidli
 <br>
 Dữ liệu được trả về theo định dạng HTML, với dữ liệu kiểu này thì cả bên FE và cả Mobile đều có thể xử lý
  ![Tux, the Linux mascot](/img/image.png)
-
+#### Với cách 2, 
