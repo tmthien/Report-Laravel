@@ -8,4 +8,4 @@
 ---
 ###### Với cách 1, đây sẽ là dữ liệu mà bên phía BE sẽ trả về sau khi người dùng đã thêm và đã format
  ![Tux, the Linux mascot](/img/image.png)
-dữ liệu được trả về theo định dạng HTML
+dữ liệu được trả về theo định dạng HTML, với dữ liệu kiểu này thì cả bên FE và cả Mobile đều có thể xử lý
