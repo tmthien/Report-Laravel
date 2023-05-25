@@ -6,3 +6,4 @@
 2. Sử dụng webView và lấy link từ FE
 3. App xử lý và set cứng text
 ---
+(/img/image.png)
