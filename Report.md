@@ -6,5 +6,6 @@
 2. Sử dụng webView và lấy link từ FE
 3. App xử lý và set cứng text
 ---
-Với cách 1, đây sẽ là dữ liệu mà bên phía BE sẽ trả về sau khi người dùng đã thêm và đã format
+###### Với cách 1, đây sẽ là dữ liệu mà bên phía BE sẽ trả về sau khi người dùng đã thêm và đã format
  ![Tux, the Linux mascot](/img/image.png)
+dữ liệu được trả về theo định dạng HTML
