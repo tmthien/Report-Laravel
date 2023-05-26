@@ -24,6 +24,9 @@ Phía **Mobile** chỉ cần lấy link webView của bên FE.
 - Thuận tiện cho việc đồng bộ giữa Mobile devices và Web.
 - Không cần phải build lại App và Web
 ##### Issue 
+- Ảnh hưởng bởi link từ **FE**, nếu Web có gặp vấn đề thì bên **Mobile devices** cũng sẽ bị ảnh hưởng
+- Nếu app có phát triển thêm tính năng mới như `Dark Mode - Light Mode` thì sẽ không dùng được link từ webView
+- Ảnh hưởng tới thời gian làm việc của phía **FE** (tăng effort)
 ---
 # Solution
-Sau khi trao đổi thông tin và nhận được sự giúp đỡ của mentors, các team cũng đã thống nhất với nhau là sẽ làm theo cách 1, vì khi chọn 1 trong 2 cách ở trên thì **FE** và **Mobile** đều có vấn đề chung đó là chưa từng làm qua về chức năng này và sẽ tốn thời gian, do đó các team thống nhất sẽ theo cách làm như đã dự tính ban đầu.
+Sau khi trao đổi thông tin và nhận được sự giúp đỡ của mentors, các team cũng đã thống nhất với nhau là sẽ làm theo cách 1, vì khi chọn 1 trong 2 cách ở trên thì **FE** và **Mobile** đều có vấn đề , do đó các team thống nhất sẽ theo cách làm như đã dự tính ban đầu.
