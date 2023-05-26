@@ -29,4 +29,4 @@ Phía **Mobile** chỉ cần lấy link webView của bên FE.
 - Ảnh hưởng tới thời gian làm việc của phía **FE** (tăng effort)
 ---
 # Solution
-Sau khi trao đổi thông tin và nhận được sự giúp đỡ của mentors, các team cũng đã thống nhất với nhau là sẽ làm theo cách 1, vì khi chọn 1 trong 2 cách ở trên thì **FE** và **Mobile** đều có vấn đề , do đó các team thống nhất sẽ theo cách làm như đã dự tính ban đầu.
+Sau khi trao đổi thông tin và nhận được sự giúp đỡ của mentors, các team cũng đã thống nhất với nhau là sẽ làm theo cách 1, vì khi chọn 1 trong 2 cách ở trên thì **FE** và **Mobile** đều sẽ gặp vấn đề , do đó các team thống nhất sẽ theo cách làm như đã dự tính ban đầu.
