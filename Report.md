@@ -24,6 +24,7 @@
 ##### Advantage
 - Thuận tiện cho việc đồng bộ giữa Mobile devices và Web.
 - Không cần phải build lại App và Web
+- **Mobile** sẽ không cần phải gọi API từ **BE**
 ##### Issue 
 - Ảnh hưởng bởi link từ **FE**, nếu Web có gặp vấn đề thì bên **Mobile devices** cũng sẽ bị ảnh hưởng
 - Nếu app có phát triển thêm tính năng mới như `Dark Mode - Light Mode` thì sẽ không dùng được link từ webView
