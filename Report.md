@@ -11,11 +11,11 @@
 - Phía **FE** sẽ chỉ cần lấy data từ `API` rồi render ra UI. 
 - Phía bên **Mobile** thì sẽ phải lấy data từ `API`, sau đó sẽ phải xử lý các thẻ `HTML` trong data, rồi mới render ra UI của Mobile
 ##### Ưu điểm
-- **BE** dễ lưu trữ data, data trả về đa dạng
 - Không cần phải build lại App và Web
 - Cả bên **FE** và **Mobile** đều có thể dùng chung data từ API, khi có thay đổi data từ phía Admin thì data cũng sẽ được đồng bộ cả bên Web và Mobile devices.
 ##### Vấn đề
 - Bên phía **Mobile** cũng chưa từng làm chức năng này nên cần nhiều thời gian để research về cách convert các thẻ `html` sang `textfield` để render ra UI.
+- Khi có thay đổi content thì phải chỉnh sửa layout từ cả 2 phía **FE** và **Mobile**
 ---
 #### Với cách 2
 - Bên phía **BE** cũng sẽ làm như cách 1
@@ -25,6 +25,7 @@
 - Thuận tiện cho việc đồng bộ giữa Mobile devices và Web.
 - Không cần phải build lại App và Web
 - **Mobile** sẽ không cần phải gọi API từ **BE**
+- Khi có thay đổi content thì chỉnh sửa layout ở phía **FE**
 ##### Vấn đề 
 - Ảnh hưởng bởi link từ **FE**, nếu Web có gặp vấn đề thì bên **Mobile devices** cũng sẽ bị ảnh hưởng
 - Nếu app có phát triển thêm tính năng mới như `Dark Mode - Light Mode` thì sẽ không dùng được link từ webView
