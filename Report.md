@@ -18,8 +18,9 @@
 - Bên phía **Mobile** cũng chưa từng làm chức năng này nên cần nhiều thời gian để research về cách convert các thẻ `html` sang `textfield` để render ra UI.
 ---
 #### Với cách 2
-Bên phía **BE** cũng sẽ làm như cách 1, và phía **FE** phải làm thêm cả phần `Responsive` cho cả Mobile devices.
-Phía **Mobile** chỉ cần lấy link webView của bên FE.
+- Bên phía **BE** cũng sẽ làm như cách 1
+- Phía **FE** phải làm thêm cả phần `Responsive` cho cả Mobile devices.
+- Phía **Mobile** chỉ cần lấy link webView của bên FE.
 ##### Advantage
 - Thuận tiện cho việc đồng bộ giữa Mobile devices và Web.
 - Không cần phải build lại App và Web
