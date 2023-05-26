@@ -7,18 +7,23 @@
 3. Set cứng text (Loại bỏ, vì dữ liệu được Admin có thể tùy chỉnh, nếu set cứng text thì phải tốn rất nhiều thời gian cho cả FE và Mobile khi dữ liệu có sự thay đổi)
 ---
 ##### Với cách 1
-Vì phía **BE** sẽ build phần `Admin Pannel` và phần `FAQ & Community Guidlines` sẽ được Admin thêm vào và có thể tùy ý chỉnh sửa, nên phía BE sẽ sử dụng thư viện `CkEditor` để `Admin` có thể tự format nội dung nhập vào và sẽ lưu luôn phần format đó dưới dạng `HTML` vào Database. 
+- Vì phía **BE** sẽ build phần `Admin Pannel` và phần `FAQ & Community Guidlines` sẽ được Admin thêm vào và có thể tùy ý chỉnh sửa, nên phía BE sẽ sử dụng thư viện `CkEditor` để `Admin` có thể tự format nội dung nhập vào và sẽ lưu luôn phần format đó dưới dạng `HTML` vào Database. 
 <br>
-Phía **FE** sẽ chỉ cần lấy data từ `API` rồi render ra UI. 
+- Phía **FE** sẽ chỉ cần lấy data từ `API` rồi render ra UI. 
 <br>
-Phía bên **Mobile** thì sẽ phải lấy data từ `API`, sau đó sẽ phải xử lý các thẻ `HTML` trong data, rồi mới render ra UI của Mobile
+- Phía bên **Mobile** thì sẽ phải lấy data từ `API`, sau đó sẽ phải xử lý các thẻ `HTML` trong data, rồi mới render ra UI của Mobile
  <br>
 ##### Vdvantage
+- **BE** dễ lưu trữ data
+- Cả bên **FE** và **Mobile** đều có thể dùng chung data từ API, khi có thay đổi data từ phía Admin thì data cũng sẽ được đồng bộ.
 ##### Issue 
-bên phía **Mobile** cũng chưa từng làm chức năng này nên cần nhiều thời gian để research về cách convert các thẻ `html` sang `textfield` để render ra UI.
+- Bên phía **Mobile** cũng chưa từng làm chức năng này nên cần nhiều thời gian để research về cách convert các thẻ `html` sang `textfield` để render ra UI.
+---
 ##### Với cách 2
 Bên phía **BE** cũng sẽ làm như cách 1, và phía **FE** phải làm thêm cả phần `Responsive` cho cả Mobile devices.
 Phía **Mobile** chỉ cần lấy link webView của bên FE.
+##### Vdvantage
+- .
 Issue của cách 2 là bên phía **FE** chưa có member nào từng làm `Responsive` bằng `React` do đó sẽ tốn thêm thời gian reseach, cũng như tốt thời gian cho việc `Responsive` và task của **FE** vẫn còn gặp phải rất nhiều `Issue`.
 # Solution
 Sau khi trao đổi thông tin và nhận được sự giúp đỡ của mentors, các team cũng đã thống nhất với nhau là sẽ làm theo cách 1, vì khi chọn 1 trong 2 cách ở trên thì **FE** và **Mobile** đều có vấn đề chung đó là chưa từng làm qua về chức năng này và sẽ tốn thời gian, do đó các team thống nhất sẽ theo cách làm như đã dự tính ban đầu.
