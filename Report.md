@@ -10,22 +10,22 @@
 - Về phía **BE** sẽ build phần `Admin Pannel` và phần `FAQ & Community Guidlines` sẽ được Admin thêm vào và có thể tùy ý chỉnh sửa, nên phía BE sẽ sử dụng thư viện `CkEditor` để `Admin` có thể tự format nội dung nhập vào và sẽ lưu luôn phần format đó dưới dạng `HTML` vào Database. 
 - Phía **FE** sẽ chỉ cần lấy data từ `API` rồi render ra UI. 
 - Phía bên **Mobile** thì sẽ phải lấy data từ `API`, sau đó sẽ phải xử lý các thẻ `HTML` trong data, rồi mới render ra UI của Mobile
-##### Advantage
+##### Ưu điểm
 - **BE** dễ lưu trữ data, data trả về đa dạng
 - Không cần phải build lại App và Web
 - Cả bên **FE** và **Mobile** đều có thể dùng chung data từ API, khi có thay đổi data từ phía Admin thì data cũng sẽ được đồng bộ cả bên Web và Mobile devices.
-##### Issue
+##### Vấn đề
 - Bên phía **Mobile** cũng chưa từng làm chức năng này nên cần nhiều thời gian để research về cách convert các thẻ `html` sang `textfield` để render ra UI.
 ---
 #### Với cách 2
 - Bên phía **BE** cũng sẽ làm như cách 1
 - Phía **FE** phải làm thêm cả phần `Responsive` cho cả Mobile devices.
 - Phía **Mobile** chỉ cần lấy link webView của bên FE.
-##### Advantage
+##### Ưu điểm
 - Thuận tiện cho việc đồng bộ giữa Mobile devices và Web.
 - Không cần phải build lại App và Web
 - **Mobile** sẽ không cần phải gọi API từ **BE**
-##### Issue 
+##### Vấn đề 
 - Ảnh hưởng bởi link từ **FE**, nếu Web có gặp vấn đề thì bên **Mobile devices** cũng sẽ bị ảnh hưởng
 - Nếu app có phát triển thêm tính năng mới như `Dark Mode - Light Mode` thì sẽ không dùng được link từ webView
 - Ảnh hưởng tới thời gian làm việc của phía **FE** (tăng effort)
