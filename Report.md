@@ -25,5 +25,6 @@ Phía **Mobile** chỉ cần lấy link webView của bên FE.
 ##### Vdvantage
 - .
 Issue của cách 2 là bên phía **FE** chưa có member nào từng làm `Responsive` bằng `React` do đó sẽ tốn thêm thời gian reseach, cũng như tốt thời gian cho việc `Responsive` và task của **FE** vẫn còn gặp phải rất nhiều `Issue`.
+---
 # Solution
 Sau khi trao đổi thông tin và nhận được sự giúp đỡ của mentors, các team cũng đã thống nhất với nhau là sẽ làm theo cách 1, vì khi chọn 1 trong 2 cách ở trên thì **FE** và **Mobile** đều có vấn đề chung đó là chưa từng làm qua về chức năng này và sẽ tốn thời gian, do đó các team thống nhất sẽ theo cách làm như đã dự tính ban đầu.
