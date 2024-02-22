@@ -31,12 +31,19 @@
 ## Webhooks Stripe
   - Add endpoint_secret(Get in Webhooks Stripe)
     <img width="736" alt="image" src="https://github.com/tmthien/Report-Laravel/assets/93562815/2ea932da-9a06-464e-92ed-a3bc4b0b6561">
+
   - Create a controller that can handle the events received from Webhooks Stripe.
     ![image](https://github.com/tmthien/Report-Laravel/assets/93562815/8fae4c79-8c7f-4fca-ac70-1489b4eedc4f)
 
   - Create endpoint on BE's source
+    ![image](https://github.com/tmthien/Report-Laravel/assets/93562815/cdb69de7-70fd-4242-afba-3e55c8b625fb)
+
   - Add endpoint to Dashboard Webhooks Stripe
+    <img width="724" alt="image" src="https://github.com/tmthien/Report-Laravel/assets/93562815/8b25e146-43a1-42cf-a041-eea122d9032c">
+
   - Select events to listen
+    <img width="753" alt="image" src="https://github.com/tmthien/Report-Laravel/assets/93562815/5bf7e5df-b3c3-493d-8a71-739191e48200">
+
 
 ## Flow Payment of Adesso
   - User will register a new account and add a coupon received (for example, 20%, 50%, 100%, 20$, 100$, etc.).
