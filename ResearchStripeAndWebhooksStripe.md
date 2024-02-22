@@ -22,9 +22,9 @@
   GET `v1/payment_intents/id` -> get payment intent with `$id = $intent->id`
 
 ```
-        $stripe = new StripeClient(config('payment.stripe.secret_key'));
+  $stripe = new StripeClient(config('payment.stripe.secret_key'));
 
-        $intent = $stripe->paymentIntents->retrieve($data['payment_intent']);
+  $intent = $stripe->paymentIntents->retrieve($data['payment_intent']);
 ```
 ## Webhooks Stripe
 
