@@ -44,7 +44,6 @@
   - Select events to listen
     <img width="753" alt="image" src="https://github.com/tmthien/Report-Laravel/assets/93562815/5bf7e5df-b3c3-493d-8a71-739191e48200">
 
-
 ## Flow Payment of Adesso
   - User will register a new account and add a coupon received (for example, 20%, 50%, 100%, 20$, 100$, etc.).
   - Back-end (BE) will receive a request from the user to enter a coupon and calculate the amount.
