@@ -33,8 +33,54 @@
     <img width="736" alt="image" src="https://github.com/tmthien/Report-Laravel/assets/93562815/2ea932da-9a06-464e-92ed-a3bc4b0b6561">
 
   - Create a controller that can handle the events received from Webhooks Stripe.
-    ![image](https://github.com/tmthien/Report-Laravel/assets/93562815/8fae4c79-8c7f-4fca-ac70-1489b4eedc4f)
+   ```
+    public function updatePaymentStatus(Request $request)
+    {
+        $payload = $request->getContent();
+        $sigHeader = $request->header('Stripe-Signature');
+        $endpointSecret = config('payment.stripe.webhook_secret');
 
+        $event = null;
+
+        try {
+            $event = Webhook::constructEvent($payload, $sigHeader, $endpointSecret);
+        } catch (\UnexpectedValueException $e) {
+            return response()->json(['error' => 'Invalid payload'], 400);
+        } catch (\Stripe\Exception\SignatureVerificationException $e) {
+            return response()->json(['error' => 'Invalid signature'], 400);
+        }
+
+        switch ($event->type) {
+            case 'payment_intent.succeeded':
+                $intentId = $event->data->object->id;
+                $paymentIntent = app(PaymentIntentRepository::class);
+
+                $record = $paymentIntent->getByFields([
+                    'intent_id' => $intentId
+                ]);
+                if($record) {
+                    switch ($record->type) {
+                        case 'login':
+                            $userRepo = app(UserRepository::class);
+        
+                            $user = $userRepo->find($record->user_id);
+        
+                            if (!empty($user->id)) {
+                                $user->payment_status = 1;
+                                $user->save();
+                            }
+                            break;
+                    }
+                    return true;
+                };
+                break;
+            default:
+                return response()->json(['error' => 'Unhandled event type'], 400);
+        }
+
+        return response()->json(['success' => true]);
+    }
+   ```
   - Create endpoint on BE's source
     ![image](https://github.com/tmthien/Report-Laravel/assets/93562815/cdb69de7-70fd-4242-afba-3e55c8b625fb)
 
@@ -49,6 +95,19 @@
     <img width="1143" alt="image" src="https://github.com/tmthien/Report-Laravel/assets/93562815/d9e57ecc-9423-44d2-bb71-9e6327afd8eb">
 
   - Back-end (BE) will receive a request from the user to enter a coupon and calculate the amount.
+    ```
+    public function reduceAmount($type, $value, $amount)
+    {
+        switch ($type) {
+            case 'percent':
+                $amount = $amount * (100 - $value) / 100;
+            case 'amount':
+                $amount = $amount - $value * 100;
+        }
+
+        return floor($amount);
+    }
+    ```
     
   - BE will then call the API /v1/payment_intents and return the client_secret key to the front-end (FE) side.
     ```
