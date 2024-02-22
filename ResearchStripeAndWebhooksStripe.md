@@ -18,8 +18,13 @@
   - `amount` intended to be collected by this PaymentIntent
   - `currency` Three-letter ISO currency code, in lowercase. Must be a supported currency.
   - `automatic_payment_methods` When you enable this parameter, this PaymentIntent accepts payment methods that you enable in the Dashboard and that are compatible with this PaymentIntent’s other parameters.
-```
+
   GET `v1/payment_intents/id` -> get payment intent with `$id = $intent->id`
+
+```
+        $stripe = new StripeClient(config('payment.stripe.secret_key'));
+
+        $intent = $stripe->paymentIntents->retrieve($data['payment_intent']);
 ```
 ## Webhooks Stripe
 
