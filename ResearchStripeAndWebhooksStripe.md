@@ -32,6 +32,8 @@
   - Add endpoint_secret(Get in Webhooks Stripe)
     <img width="736" alt="image" src="https://github.com/tmthien/Report-Laravel/assets/93562815/2ea932da-9a06-464e-92ed-a3bc4b0b6561">
   - Create a controller that can handle the events received from Webhooks Stripe.
+    ![image](https://github.com/tmthien/Report-Laravel/assets/93562815/8fae4c79-8c7f-4fca-ac70-1489b4eedc4f)
+
   - Create endpoint on BE's source
   - Add endpoint to Dashboard Webhooks Stripe
   - Select events to listen
