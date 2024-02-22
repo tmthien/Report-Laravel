@@ -1,8 +1,9 @@
 # Research Stripe and Webhooks Stripe
 
 ## Stripe
-  
-1. **API using in Adesso Project**
+  Add `Publishable key` on FE's source
+  Add `Secret key` on BE's source
+**API using in Adesso Project**
    
    POST `/v1/payment_intents` -> create new payment intent
   ```
@@ -27,14 +28,17 @@
   $intent = $stripe->paymentIntents->retrieve($data['payment_intent']);
 ```
 ## Webhooks Stripe
+  - Add endpoint_secret(Get in Webhooks Stripe)
+  - Create a controller that can handle the events received from Webhooks Stripe.
+  - Create endpoint on BE's source
+  - Add endpoint to Dashboard Webhooks Stripe
+  - Select events to listen
 
-Webhooks Stripe là một tính năng quan trọng trong việc xử lý các sự kiện liên quan đến thanh toán trên nền tảng của Stripe. Webhooks cho phép Stripe gửi thông báo tức thời đến các ứng dụng của bạn khi có các sự kiện như thanh toán thành công, hủy đơn hàng, hoàn tiền, và nhiều hơn nữa.
-
-Các bước để sử dụng Webhooks Stripe bao gồm:
-
-1. **Đăng ký URL Webhook**: Đầu tiên, bạn cần đăng ký URL mà Stripe sẽ gửi các thông báo Webhook đến.
-2. **Xử lý thông báo**: Khi Stripe gửi thông báo đến URL Webhook của bạn, bạn cần xử lý thông tin được gửi từ Stripe và thực hiện các hành động cần thiết, chẳng hạn như cập nhật trạng thái đơn hàng trong cơ sở dữ liệu của bạn.
-
-## Kết luận
-
-Trong document này, chúng ta đã nghiên cứu về Stripe và tính năng Webhooks Stripe. Hiểu biết sâu sắc về cả hai sẽ giúp bạn tối ưu hóa quá trình thanh toán trực tuyến và cung cấp trải nghiệm người dùng tốt nhất cho khách hàng của mình.
+## Flow Payment of Adesso
+  - User will register a new account and add a coupon received (for example, 20%, 50%, 100%, 20$, 100$, etc.).
+  - Back-end (BE) will receive a request from the user to enter a coupon and calculate the amount.
+  - BE will then call the API /v1/payment_intents and return the client_secret key to the front-end (FE) side.
+  - FE will use the client_secret key to show the payment page with the calculated amount.
+  - When User submits the payment, Webhooks Stripe will trigger an event to the BE side.
+  - BE side will update the payment_status of the user when the status of the event is 'succeeded'.
+  - Finally, User will be redirected to the Heart Score page.
