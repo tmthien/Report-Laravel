@@ -163,6 +163,40 @@
     }
     ```
   - FE will use the client_secret key to show the payment page with the calculated amount.
+    <img width="1144" alt="image" src="https://github.com/tmthien/Report-Laravel/assets/93562815/c5621d0d-2870-40cf-833e-4231310fdba1">
+
   - When User submits the payment, Webhooks Stripe will trigger an event to the BE side.
+    <img width="861" alt="image" src="https://github.com/tmthien/Report-Laravel/assets/93562815/60cbcbeb-0e47-4365-b101-71a46f458c1b">
+
   - BE side will update the payment_status of the user when the status of the event is 'succeeded'.
+    ```
+    switch ($event->type) {
+            case 'payment_intent.succeeded':
+                $intentId = $event->data->object->id;
+                $paymentIntent = app(PaymentIntentRepository::class);
+
+                $record = $paymentIntent->getByFields([
+                    'intent_id' => $intentId
+                ]);
+                if($record) {
+                    switch ($record->type) {
+                        case 'login':
+                            $userRepo = app(UserRepository::class);
+        
+                            $user = $userRepo->find($record->user_id);
+        
+                            if (!empty($user->id)) {
+                                $user->payment_status = 1;
+                                $user->save();
+                            }
+                            break;
+                    }
+                    return true;
+                };
+                break;
+            default:
+                return response()->json(['error' => 'Unhandled event type'], 400);
+        }
+    ```
   - Finally, User will be redirected to the Heart Score page.
+  <img width="1638" alt="image" src="https://github.com/tmthien/Report-Laravel/assets/93562815/a3264617-9d4f-45b1-8d89-c50ac39ca90f">
