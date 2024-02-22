@@ -6,17 +6,15 @@
    
    POST /v1/payment_intents -> create new payment intent -> generate client_secert
    
-   ``
-   $stripe = new StripeClient(config('payment.stripe.secret_key'));
+    `$stripe = new StripeClient(config('payment.stripe.secret_key'));
 
-        $intent = $stripe->paymentIntents->create(
-            [
-                'amount' => $amount,
-                'currency' => 'usd',
-                'automatic_payment_methods' => ['enabled' => true],
-            ]
-        );
-   ``
+    $intent = $stripe->paymentIntents->create(
+        [
+            'amount' => $amount,
+            'currency' => 'usd',
+            'automatic_payment_methods' => ['enabled' => true],
+        ]
+    );`
 
 ## Webhooks Stripe
 
