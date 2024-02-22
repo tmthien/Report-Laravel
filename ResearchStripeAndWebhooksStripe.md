@@ -33,6 +33,7 @@
   - Create endpoint on BE's source
   - Add endpoint to Dashboard Webhooks Stripe
   - Select events to listen
+<img width="673" alt="image" src="https://github.com/tmthien/Report-Laravel/assets/93562815/99499674-b984-42f0-a76c-db8ca444f53d">
 
 ## Flow Payment of Adesso
   - User will register a new account and add a coupon received (for example, 20%, 50%, 100%, 20$, 100$, etc.).
