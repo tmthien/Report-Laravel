@@ -15,6 +15,10 @@
   ]);
   ```
 
+  - `amount` intended to be collected by this PaymentIntent
+  - `currency` Three-letter ISO currency code, in lowercase. Must be a supported currency.
+  - `automatic_payment_methods` When you enable this parameter, this PaymentIntent accepts payment methods that you enable in the Dashboard and that are compatible with this PaymentIntent’s other parameters.
+
 ## Webhooks Stripe
 
 Webhooks Stripe là một tính năng quan trọng trong việc xử lý các sự kiện liên quan đến thanh toán trên nền tảng của Stripe. Webhooks cho phép Stripe gửi thông báo tức thời đến các ứng dụng của bạn khi có các sự kiện như thanh toán thành công, hủy đơn hàng, hoàn tiền, và nhiều hơn nữa.
