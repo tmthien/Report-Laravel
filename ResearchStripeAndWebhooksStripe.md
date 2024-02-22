@@ -46,8 +46,63 @@
 
 ## Flow Payment of Adesso
   - User will register a new account and add a coupon received (for example, 20%, 50%, 100%, 20$, 100$, etc.).
+    <img width="1143" alt="image" src="https://github.com/tmthien/Report-Laravel/assets/93562815/d9e57ecc-9423-44d2-bb71-9e6327afd8eb">
+
   - Back-end (BE) will receive a request from the user to enter a coupon and calculate the amount.
+    
   - BE will then call the API /v1/payment_intents and return the client_secret key to the front-end (FE) side.
+    ```
+    public function getStripeToken($amount)
+    {
+        $user = auth()->user();
+        $couponId = $user->coupon_id;
+
+        // get the correct amount
+        if (!empty($couponId)) {
+            $coupon = app(CouponRepository::class);
+
+            $record = $coupon->getByFields([
+                'id' => $couponId
+            ]);
+
+            if (!empty($record->id)) {
+                $amount = $this->reduceAmount($record->type, $record->value, $amount);
+            }
+        }
+
+        if($amount == 0 || $amount < 0) {
+            $user->update([
+                'payment_status' => 1,
+            ]);
+
+            return [
+                'client_secret' => null,
+            ];
+        }
+
+        $stripe = new StripeClient(config('payment.stripe.secret_key'));
+
+        $intent = $stripe->paymentIntents->create(
+            [
+                'amount' => $amount,
+                'currency' => 'usd',
+                'automatic_payment_methods' => ['enabled' => true],
+            ]
+        );
+
+        // todo store intent to database
+        $payment = app(PaymentIntentRepository::class);
+        $payment->insertRecord([
+            'intent_id' => $intent->id,
+            'user_id' => $user->id,
+            'type' => 'login'
+        ]);
+
+        return [
+            'client_secret' => $intent->client_secret
+        ];
+    }
+    ```
   - FE will use the client_secret key to show the payment page with the calculated amount.
   - When User submits the payment, Webhooks Stripe will trigger an event to the BE side.
   - BE side will update the payment_status of the user when the status of the event is 'succeeded'.
